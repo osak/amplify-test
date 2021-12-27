@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {API, graphqlOperation} from "aws-amplify";
+import {API, Auth, graphqlOperation} from "aws-amplify";
 import {GraphQLResult} from '@aws-amplify/api-graphql';
 import {Blog, ModelBlogConnection} from "./API";
+import {CognitoUser} from 'amazon-cognito-identity-js';
+import {AmplifyAuthenticator} from "@aws-amplify/ui-react";
+import { onAuthUIStateChange, AuthState } from '@aws-amplify/ui-components';
 
 const topPageQuery = /* GraphQL */`
   query TopPage {
@@ -32,10 +35,23 @@ type TopPageQueryResult = {
 }
 
 function App() {
+  const [user, setUser] = useState(null as CognitoUser | null);
+  const [showAuthenticator, setShowAuthenticator] = useState(false);
   const [blogs, setBlogs] = useState([] as Blog[]);
 
   useEffect(() => {
     fetchBlogs();
+  }, []);
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser().then((result) => setUser(result));
+    return onAuthUIStateChange((state) => {
+      if (state == AuthState.SignedIn) {
+        Auth.currentAuthenticatedUser().then((result) => setUser(result));
+      } else if (state == AuthState.SignedOut) {
+        setUser(null);
+      }
+    });
   }, []);
 
   async function fetchBlogs() {
@@ -48,6 +64,8 @@ function App() {
 
   return (
     <div className="App">
+      <header>Logged in as {user?.getUsername()} <button onClick={() => setShowAuthenticator(true)}>Login</button></header>
+      {showAuthenticator && <AmplifyAuthenticator />}
       <h2>Blogs</h2>
       {
         blogs.map((blog) => (
