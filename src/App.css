@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.blog {
+  border: 1px black groove;
+  padding: 8px;
+  margin: 32px;
+}
+
+.post {
+  border: 1px black dashed;
+  padding: 8px;
+}
+
+.comment {
+  font-size: 80%;
+}
