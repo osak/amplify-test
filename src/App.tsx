@@ -112,7 +112,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>Logged in as {user?.getUsername()} <button onClick={() => setShowAuthenticator(true)}>Login</button></header>
+      <header>Logged in as {user?.getUsername()} <button onClick={() => setShowAuthenticator(true)}>Login</button><button onClick={() => Auth.signOut()}>Logout</button></header>
       {showAuthenticator && <AmplifyAuthenticator />}
       <h2>Blogs</h2>
       {
