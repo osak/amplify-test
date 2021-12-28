@@ -3,11 +3,10 @@
   "serviceConfiguration": {
     "apiName": "amplifytest",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-b9e83df2-c2bf-450e-8934-ab6ed890eaae/amplify/backend/api/amplifytest/schema.graphql",
+    "gqlSchemaPath": "/home/osak/amplify-test/amplify/backend/api/amplifytest/schema.graphql",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authamplifytest9f3409e5"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
@@ -17,10 +16,6 @@
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
-      },
-      {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authamplifytest9f3409e5"
       }
     ]
   }
