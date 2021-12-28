@@ -48,6 +48,10 @@
   padding: 8px;
 }
 
+.new-post {
+  padding: 8px;
+}
+
 .comment {
   font-size: 80%;
 }

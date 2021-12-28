@@ -20,6 +20,12 @@
           "appId": "d9zp71u4t5mn3",
           "type": "manual"
         }
+      },
+      "function": {
+        "AdminQueries53fce127": {
+          "deploymentBucketName": "amplify-amplifytest-dev-23308-deployment",
+          "s3Key": "amplify-builds/AdminQueries53fce127-4a647962345563384663-build.zip"
+        }
       }
     }
   }

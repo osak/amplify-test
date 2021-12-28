@@ -13,12 +13,19 @@ export const onCreateBlog = /* GraphQL */ `
           title
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           blogPostsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -33,12 +40,19 @@ export const onUpdateBlog = /* GraphQL */ `
           title
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           blogPostsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -53,12 +67,19 @@ export const onDeleteBlog = /* GraphQL */ `
           title
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           blogPostsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -67,27 +88,25 @@ export const onCreatePost = /* GraphQL */ `
     onCreatePost {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
           content
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           postCommentsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       blogPostsId
     }
   }
@@ -97,27 +116,25 @@ export const onUpdatePost = /* GraphQL */ `
     onUpdatePost {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
           content
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           postCommentsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       blogPostsId
     }
   }
@@ -127,27 +144,25 @@ export const onDeletePost = /* GraphQL */ `
     onDeletePost {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
           content
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           postCommentsId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       blogPostsId
     }
   }
@@ -156,25 +171,12 @@ export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment {
     onCreateComment {
       id
-      post {
-        id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        blogPostsId
-      }
       content
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       postCommentsId
     }
   }
@@ -183,25 +185,12 @@ export const onUpdateComment = /* GraphQL */ `
   subscription OnUpdateComment {
     onUpdateComment {
       id
-      post {
-        id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        blogPostsId
-      }
       content
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       postCommentsId
     }
   }
@@ -210,25 +199,12 @@ export const onDeleteComment = /* GraphQL */ `
   subscription OnDeleteComment {
     onDeleteComment {
       id
-      post {
-        id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        blogPostsId
-      }
       content
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       postCommentsId
     }
   }

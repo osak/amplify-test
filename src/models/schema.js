@@ -54,6 +54,23 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "provider": "iam",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -73,19 +90,6 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
-                },
-                "blog": {
-                    "name": "blog",
-                    "isArray": false,
-                    "type": {
-                        "model": "Blog"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "postBlogId"
-                    }
                 },
                 "comments": {
                     "name": "comments",
@@ -131,6 +135,23 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "provider": "iam",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -143,19 +164,6 @@ export const schema = {
                     "type": "ID",
                     "isRequired": true,
                     "attributes": []
-                },
-                "post": {
-                    "name": "post",
-                    "isArray": false,
-                    "type": {
-                        "model": "Post"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "commentPostId"
-                    }
                 },
                 "content": {
                     "name": "content",
@@ -194,11 +202,28 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "provider": "iam",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
                 }
             ]
         }
     },
     "enums": {},
     "nonModels": {},
-    "version": "920118e6cbedacf9fdf58bb983d59a94"
+    "version": "a4cbad5ef7c9c55073c32dc43bd21b7a"
 };

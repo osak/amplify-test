@@ -29,7 +29,6 @@ export declare class Blog {
 export declare class Post {
   readonly id: string;
   readonly title: string;
-  readonly blog?: Blog;
   readonly comments?: (Comment | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
@@ -40,7 +39,6 @@ export declare class Post {
 
 export declare class Comment {
   readonly id: string;
-  readonly post?: Post;
   readonly content: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
